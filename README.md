@@ -60,6 +60,9 @@ Como se solicitó, el proyecto se realizó con la integración de Git en Slack.
 
 ![Evidencia2](/images/SCR-20240412-swve.png)
 
+## Manejo de pruebas
+- El detalle de las pruebas se encuentra en el siguiente [link](/tests/README.md).
+
 ## Problemas encontrados
 Como tenemos dominio de Python y de bases de datos, en particular no tuvimos problemas.
 Destacar que las pruebas se definieron en conjunto porque en esa parte no teníamos tanta experiencia.

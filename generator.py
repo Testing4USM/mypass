@@ -12,6 +12,9 @@ class GeneratorService:
     )
 
     def __init__(self, min_length=8, max_length=16, chars=DEFAULT_CHARS) -> None:
+        if not chars.isascii():
+            raise ValueError("Chars must be ASCII")
+
         self.min_length = min_length
         self.max_length = max_length
         self.chars = chars

@@ -43,9 +43,9 @@ def test_chars_password():
 
 def test_unicode_chars_password():
     """
-    Test if the generated password has the correct unicode characters.
+    Test if that generated password can't have unicode characters.
     """
-    generator = GeneratorService(chars="🐍")
-    password = generator.generate_password(5)
-
-    assert all(c in "🐍" for c in password)
+    try:
+        GeneratorService(chars="🐍")
+    except ValueError as e:
+        assert str(e) == "Chars must be ASCII"
