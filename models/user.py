@@ -61,7 +61,7 @@ class KeyChain:
             _, name, token = password
             self.passwords[name] = token
 
-    def add_password(self, name, password) -> None:
+    def add_password(self, name, password) -> bool:
         """
         Add a password to the keychain.
 
@@ -74,9 +74,10 @@ class KeyChain:
         created, encrpyted_password = self.db.add_password(id, name, token)
         
         if not created:
-            return
+            return False
 
         self.passwords[name] = encrpyted_password
+        return True
 
     def get_password(self, name) -> str:
         """
